@@ -58,3 +58,7 @@ function stableStringify(obj) {
    2. OriginalList1
    3. UpdatedList
 4. Result: The script returns a List of items that were added or changed in the UpdatedList compared to the OriginalList.
+
+## Notes
+
+The format of dates is changed when it is assigned to a DatePicker control and then read back into a list. This may cause items to be detected as changed even if only the date format changed. You may need to normalize date formats in your lists before passing them to this script if that is an issue.
