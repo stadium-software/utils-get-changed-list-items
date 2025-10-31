@@ -30,11 +30,20 @@ function diffLists(listA, listB, key) {
     const updatedItems = [];
     for (const [id, itemB] of mapB) {
         const itemA = mapA.get(id);
-        if (!itemA || JSON.stringify(itemA) !== JSON.stringify(itemB)) {
+        if (!itemA || stableStringify(itemA) !== stableStringify(itemB)) {
             updatedItems.push(itemB);
         }
     }
     return updatedItems;
+}
+function stableStringify(obj) {
+    if (Array.isArray(obj)) {
+        return `[${obj.map(stableStringify).join(',')}]`;
+    } else if (obj && typeof obj === 'object') {
+        const keys = Object.keys(obj).sort();
+        return `{${keys.map(k => JSON.stringify(k) + ':' + stableStringify(obj[k])).join(',')}}`;
+    }
+    return JSON.stringify(obj);
 }
 ```
 
