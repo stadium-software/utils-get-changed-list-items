@@ -55,8 +55,8 @@ function stableStringify(obj) {
 1. Drag the script called "GetChangedListItems" into a script or event handler
 2. Enter values for the script input parameters
    1. IDColumn: The name of an object that uniquely identifies an item in the two lists (e.g. ID)
-   2. OriginalList1
-   3. UpdatedList
+   2. OriginalList: The original List of items
+   3. UpdatedList: The updated List of items
 4. Result: The script returns a List of items that were added or changed in the UpdatedList compared to the OriginalList.
 
 ## Notes
