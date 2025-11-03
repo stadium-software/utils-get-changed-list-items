@@ -1,6 +1,6 @@
 # Get Changed List Items
 
-Pass in an original List of objects and an updated List and get back the items that were added or changed.
+Pass in an original List of objects and an updated List and get back the items that were added, removed or changed.
 
 This has been tested with simple lists of objects, not with deep lists. See the sample application to test it with your data.
 
